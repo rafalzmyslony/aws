@@ -1,0 +1,7 @@
+Main.tf creates cloud infrastructure and main EC2 instance for hosting web application.
+It contains also bash script which is able to configure DB_HOST for todo app by taking ip address/host from EC2 - Database
+
+main2.tf creates ec2 instance for hosting postgresql db for web application (todo app)
+
+1. EC2 db_todo with DB will be in public subnet despite the fact, best practice says it must be in private without internet access.
+Because otherwise i cannot install any packages - I don't want to use preconfigure ami images or bastion hosts.

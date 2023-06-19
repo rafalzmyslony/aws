@@ -1,0 +1,8 @@
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
+.terraform.lock.hcl
+/project1_flask_todo/Lib/
+/project1_flask_todo/Scripts/
+/project1_flask_todo/Include/
+/project1_flask_todo/pyvenv.cfg

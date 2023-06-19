@@ -1,0 +1,27 @@
+New line to see merge 1
+
+https://github.com/rafalzmyslony/some_skills/tree/testing/project1_flask_todo
+
+git clone -b testing https://github.com/rafalzmyslony/some_skills/
+
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_DB=todo_db -d postgres
+pip install psycopg2-binary
+export DB_HOST=172.17.0.2
+export DB_PORT=5432
+export DB_NAME=todo_db
+export DB_USER=postgres
+export DB_PASSWORD=mysecretpassword
+
+./bin/python flask_app.py
+
+
+
+Roadmap:
+1. ec2 app and db
+	- 2nd db as master-slave
+	- 2nd db as active-active
+
+2. docker app and db
+	- docker compose
+	- minikube
