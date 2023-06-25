@@ -1,8 +1,10 @@
-New line to see merge 1
+Simple flask todo app to deploy in container.
+
+
 
 https://github.com/rafalzmyslony/some_skills/tree/testing/project1_flask_todo
 
-git clone -b testing https://github.com/rafalzmyslony/some_skills/
+git clone -b testing https://github.com/rafalzmyslony/
 
 docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
 docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_DB=todo_db -d postgres
@@ -15,6 +17,13 @@ export DB_PASSWORD=mysecretpassword
 
 ./bin/python flask_app.py
 
+=====Testing in Win10======
+adding env
+[Environment]::SetEnvironmentVariable('DB_HOST','172.26.10.11')
+[Environment]::SetEnvironmentVariable('DB_PORT','5432')
+[Environment]::SetEnvironmentVariable('DB_NAME','todo_db')
+[Environment]::SetEnvironmentVariable('DB_USER','postgres')
+[Environment]::SetEnvironmentVariable('DB_PASSWORD','mysecretpassword')
 
 
 Roadmap:

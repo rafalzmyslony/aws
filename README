@@ -1,3 +1,6 @@
 Some skills
-
 Here are my various scripts - python for M365, Terraform, K8s
+
+Currently there are two projects:
+1. project1_flask_todo which is very simple the todo app written in flask that must connects to postgresql.
+2.terraform_awx which creates ec2 instance with minikube running Ansible AWX

@@ -1,0 +1,1 @@
+It creates one EC2 instance in AWS. Then install Python, Minikuke, creates kustomization file for Ansible AWX. Then Ansible AWX works in pods in Minikube cluster.
