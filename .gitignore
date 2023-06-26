@@ -6,3 +6,5 @@ terraform.tfstate.backup
 /project1_flask_todo/Scripts/
 /project1_flask_todo/Include/
 /project1_flask_todo/pyvenv.cfg
+test.py
+test2.py

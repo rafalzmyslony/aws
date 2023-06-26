@@ -44,7 +44,7 @@ def index():
     cur.execute('SELECT * FROM todos')
     todos = cur.fetchall()
     
-    return render_template('templates/index.html', todos=todos)
+    return render_template('index.html', todos=todos)
 
 if __name__ == '__main__':
     app.run(debug=True)
