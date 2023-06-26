@@ -5,6 +5,7 @@ import os
 app = Flask(__name__)
 
 # Get PostgreSQL connection details from environment variables
+
 DB_HOST = os.environ.get('DB_HOST')
 DB_PORT = os.environ.get('DB_PORT')
 DB_NAME = os.environ.get('DB_NAME')
@@ -43,7 +44,7 @@ def index():
     cur.execute('SELECT * FROM todos')
     todos = cur.fetchall()
     
-    return render_template('index.html', todos=todos)
+    return render_template('templates/index.html', todos=todos)
 
 if __name__ == '__main__':
     app.run(debug=True)
