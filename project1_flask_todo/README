@@ -1,19 +1,22 @@
 Simple flask todo app to deploy in container.
 
 
+How to run app
+
+1. You can deploy via image from Docker Hub from my repo (I upload from this code) - the fastest way
+docker pull razmyslony/todo_app
+docker pull postgres
+
+
 docker network create mynetwork_for_flask
 docker run --name postgres_instance -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_DB=todo_db -d --network mynetwork_for_flask postgres
-docker run -d --name flask -e DB_HOST=postgres_instance --network mynetwork_for_flask -p 9090:9090 flask
+docker run -d --name flask -e DB_HOST=postgres_instance --network mynetwork_for_flask -p 9090:9090 razmyslony/todo_app
+
+2. You can create image on your own from Dockerfile and change some settings if you like
+- https://github.com/rafalzmyslony/aws
+- docker build --tag <name> .
 
 
-pip install psycopg2-binary
-export DB_HOST=172.17.0.2
-export DB_PORT=5432
-export DB_NAME=todo_db
-export DB_USER=postgres
-export DB_PASSWORD=mysecretpassword
-
-./bin/python flask_app.py
 
 =====Testing in Win10======
 adding env
@@ -23,12 +26,23 @@ adding env
 [Environment]::SetEnvironmentVariable('DB_USER','postgres')
 [Environment]::SetEnvironmentVariable('DB_PASSWORD','mysecretpassword')
 
+=====Testing in Debian======
+pip install psycopg2-binary
+export DB_HOST=172.17.0.2
+export DB_PORT=5432
+export DB_NAME=todo_db
+export DB_USER=postgres
+export DB_PASSWORD=mysecretpassword
 
-Roadmap:
-1. ec2 app and db
-	- 2nd db as master-slave
-	- 2nd db as active-active
+./bin/python flask_app.py
 
-2. docker app and db
-	- docker compose
-	- minikube
+
+=======ROADMAP=======
+- change Dockerfile to run container as another user than root
+- quick manual how to deploy on docker and EC2 instances - terraform script, dockercompose
+- instead of ENV VAR to connect to DB, use Hashicorp Vault
+- run todo app on ec2 instance and two Postgresql db in active-active or in master-slave mode.
+- deploy in minikube
+	- use aws loadbalancer, run on some domain xxx.net
+	- todo app on minikube and db on ec2 instance
+- add some aws labda function to improve this todo app

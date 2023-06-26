@@ -1,6 +1,15 @@
 Some skills
-Here are my various scripts - python for M365, Terraform, K8s
+Here are my various scripts - Terraform, Minikube, aws, python, Dockerfile
 
 Currently there are two projects:
-1. project1_flask_todo which is very simple the todo app written in flask that must connects to postgresql.
-2.terraform_awx which creates ec2 instance with minikube running Ansible AWX
+- Ansible awx in minikube cluster which is hosted on ec2 instance
+(It creates one EC2 instance in AWS. Then install Python, Minikuke, creates kustomization file for Ansible AWX. Then Ansible AWX works in pods in Minikube cluster.)
+- project1_flask_todo
+this is simply todo app written in flask, which can be hosted on container or ec2 instances. This app uses postgresql database.
+
+
+
+
+
+
+
